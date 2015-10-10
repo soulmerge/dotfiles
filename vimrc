@@ -91,7 +91,6 @@ map <leader><leader> :CtrlP<cr>
 
 " some interesting ideas found here:
 " http://dougblack.io/words/a-good-vimrc.html
-colorscheme badwolf
 set cursorline
 set lazyredraw
 set showmatch
@@ -102,6 +101,12 @@ let g:ctrlp_match_window = 'bottom,order:ttb'
 let g:ctrlp_switch_buffer = 0
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
+
+" colorscheme badwolf
+let g:solarized_termcolors= 256
+" let g:solarized_contrast = 'normal'
+colorscheme solarized
+set background=dark
 
 " syntax highlighting
 syntax on
