@@ -1,8 +1,8 @@
-" some features must focus consider file type
+" some features must consider file type
 filetype plugin on
 filetype indent on
 
-" Nop, we don't want to be vi-compatible
+" Nope, we don't want to be vi-compatible
 set nocompatible
 
 " load pathogen
@@ -32,7 +32,7 @@ set tabstop=4
 set expandtab
 
 " plugin: LargeFile
-let g:LargeFile         = 100 " in megabytes
+let g:LargeFile = 100 " in megabytes
 
 " plugin: NerdTree
 let NERDTreeQuitOnOpen=1
@@ -59,12 +59,10 @@ set mouse=
 set shell=zsh
 
 " handling long lines
-set wrap lbr showbreak=>>>\
+set wrap lbr showbreak=>>>\ 
 set textwidth=0
 set sidescroll=30
 set listchars+=precedes:<,extends:>
-" leading/trailing characters for line wraps (:help highlight)
-hi NonText term=bold ctermfg=6 gui=bold guifg=Green
 
 " nice split pane management
 set winminheight=0
@@ -84,6 +82,7 @@ map <leader>e <C-W>l<C-W>_zz
 map <leader>i <C-W>h<C-W>_zz
 map <leader>v <C-W>_zz
 map <leader>o <C-W>o
+map <leader>c <C-W><C-C>
 map <leader>p :se paste!<cr>"*p:se paste!<cr>
 map <leader>q :q<cr>
 map <leader>r :e<cr>
@@ -91,7 +90,7 @@ map <leader><leader> :CtrlP<cr>
 
 " some interesting ideas found here:
 " http://dougblack.io/words/a-good-vimrc.html
-set cursorline
+" set cursorline
 set lazyredraw
 set showmatch
 set incsearch
@@ -102,24 +101,33 @@ let g:ctrlp_switch_buffer = 0
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
 
-" colorscheme badwolf
-let g:solarized_termcolors= 256
-" let g:solarized_contrast = 'normal'
-colorscheme solarized
-set background=dark
+" colors!
+augroup ColorOverride
+    au!
+    autocmd ColorScheme * highlight Normal ctermbg=0
+    autocmd ColorScheme * highlight StatusLine ctermfg=15 ctermbg=11
+    autocmd ColorScheme * highlight StatusLineNC ctermfg=12 ctermbg=10
+    " leading/trailing characters for line wraps (:help highlight)
+    autocmd ColorScheme * highlight NonText term=bold ctermfg=4
+    autocmd ColorScheme * highlight Search ctermbg=1
+    autocmd ColorScheme * highlight IncSearch ctermbg=3
+augroup END
+
+colorscheme crayon
 
 " syntax highlighting
 syntax on
 
 " I *never* press F1 intentionally
-map <F1>        <ESC>
+map <F1> <ESC>
 
 " Yank to clipboard
 noremap Y "*y
 
 " Highlight searches, but allow disabling
 set hlsearch
-map <silent> <F4>    :noh<CR>
+map <silent> <F4>      :noh<CR>
+map <silent> <leader>s :noh<CR>
 
 " I wich I could set this to a higher value
 set history=10000
@@ -128,13 +136,12 @@ set history=10000
 map <silent> <F5>    :e<CR>zz
 
 " Configure built-in Explorer
-" (this is a bit outdated, as I switched to NerdTree)
 set wildmenu
 set wildignore=*.bak,*.o,*.e,*~
 
 " Navigation when started with multiple files
-map <silent> <F2>    :prev<CR>
-map <silent> <F3>    :next<CR>
+map <silent> <F2>  :prev<CR>
+map <silent> <F3>  :next<CR>
 
 " Do not clutter remote file systems with swap files
 set dir=~/.vim/swp/
@@ -149,9 +156,6 @@ inoremap if<cr> if () {<cr>}<up><right><right><right>
 inoremap for<cr> for () {<cr>}<up><right><right><right><right>
 inoremap foreach<cr> foreach () {<cr>}<up><right><right><right><right><right><right><right><right>
 inoremap fori<cr> for () {<cr>}<up><right><right><right><right>$i = 0; $i < ; $i++<left><left><left><left><left><left>
-
-" What's this???
-"au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
 
 " Nice status lines
 set laststatus=2
@@ -211,8 +215,3 @@ function! Random()
 endfun
 
 au BufNewFile,BufRead *.jinja2 setlocal ft=jinja
-
-" Some ancient highlight definitions
-"hi User1  term=bold  cterm=bold  gui=bold  ctermfg=Black  ctermbg=White  guifg=Black  guibg=White
-"hi User2  term=bold  cterm=bold  gui=bold  ctermfg=Red    ctermbg=Black  guifg=Black  guibg=Red
-

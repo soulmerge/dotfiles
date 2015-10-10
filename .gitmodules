@@ -4,9 +4,6 @@
 [submodule "vim/plugins/ag.vim"]
 	path = vim/plugins/ag.vim
 	url = https://github.com/rking/ag.vim.git
-[submodule "vim/plugins/badwolf-colors"]
-	path = vim/plugins/badwolf-colors
-	url = https://github.com/sjl/badwolf/
 [submodule "vim/plugins/ctrlp"]
 	path = vim/plugins/ctrlp
 	url = https://github.com/kien/ctrlp.vim.git
@@ -19,6 +16,6 @@
 [submodule "vim/plugins/python-mode"]
 	path = vim/plugins/python-mode
 	url = https://github.com/klen/python-mode.git
-[submodule "vim/plugins/vim-colors-solarized"]
-	path = vim/plugins/vim-colors-solarized
-	url = https://github.com/altercation/vim-colors-solarized.git
+[submodule "vim/plugins/crayon"]
+	path = vim/plugins/crayon
+	url = https://github.com/dylanaraps/crayon.git
