@@ -1,0 +1,21 @@
+[submodule "vim/plugins/ack.vim"]
+	path = vim/plugins/ack.vim
+	url = https://github.com/mileszs/ack.vim.git
+[submodule "vim/plugins/ag.vim"]
+	path = vim/plugins/ag.vim
+	url = https://github.com/rking/ag.vim.git
+[submodule "vim/plugins/badwolf-colors"]
+	path = vim/plugins/badwolf-colors
+	url = https://github.com/sjl/badwolf/
+[submodule "vim/plugins/ctrlp"]
+	path = vim/plugins/ctrlp
+	url = https://github.com/kien/ctrlp.vim.git
+[submodule "vim/plugins/nerdtree"]
+	path = vim/plugins/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
+[submodule "vim/plugins/pathogen"]
+	path = vim/plugins/pathogen
+	url = https://github.com/tpope/vim-pathogen.git
+[submodule "vim/plugins/python-mode"]
+	path = vim/plugins/python-mode
+	url = https://github.com/klen/python-mode.git
