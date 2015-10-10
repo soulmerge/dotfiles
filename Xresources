@@ -1,0 +1,47 @@
+xterm*font: -gnu-unifont-*-*-*-*-*-*-*-*-*-*-*-*
+xterm*saveLines: 65535
+
+! URxvt.font: -gnu-unifont-*-*-*-*-*-*-*-*-*-*-*-*
+! URxvt.boldFont: -misc-fixed-bold-r-normal--20-140-75-75-c-90-iso10646-1
+! URxvt2.font: xft:Inconsolata-dz:size=11
+! URxvt2.boldFont: xft:Inconsolata-dz:size=11:style=bold
+! URxvt.font: xft:Inconsolata-dz:size=12
+! URxvt.boldFont: xft:Inconsolata-dz:size=12:style=bold
+!
+URxvt.font: xft:Inconsolata:size=11
+URxvt.boldFont: xft:Inconsolata:size=11:style=bold
+URxvt.saveLines: 65535
+URxvt.scrollBar: False
+
+URxvt*background: #141413
+URxvt*foreground: #f8f6f2
+
+URxvt*color0:  #2E3436
+URxvt*color1:  #a40000
+URxvt*color2:  #4E9A06
+URxvt*color3:  #C4A000
+URxvt*color4:  #3465A4
+URxvt*color5:  #75507B
+URxvt*color6:  #ce5c00
+URxvt*color7:  #babdb9
+URxvt*color8:  #555753
+URxvt*color9:  #EF2929
+URxvt*color10: #8AE234
+URxvt*color11: #FCE94F
+URxvt*color12: #729FCF
+URxvt*color13: #AD7FA8
+URxvt*color14: #fcaf3e
+URxvt*color15: #EEEEEC
+
+! open URLs in firefox
+URxvt.perl-ext-common: default,matcher,font-size
+URxvt.url-launcher: /usr/bin/firefox
+URxvt.matcher.button: 2
+URxvt.colorUL: #4682B4
+
+! Taken from these sources:
+! - https://wiki.archlinux.org/index.php/Rxvt-unicode#Changing_font_size_on_the_fly
+! - https://github.com/foop/config/blob/master/Xdefaults
+URxvt.keysym.C-KP_Add: perl:font-size:increase
+URxvt.keysym.C-KP_Subtract: perl:font-size:decrease
+
