@@ -50,7 +50,7 @@ let g:pymode_lint_cwindow = 0
 let g:pymode_rope_complete_on_dot = 0
 
 " do not highlight matching parentheses (too slow)
-let loaded_matchparen = 1
+" let loaded_matchparen = 1
 
 " disable mouse entirely
 set mouse=
@@ -99,7 +99,7 @@ nnoremap <leader>i `[v`]
 let g:ctrlp_match_window = 'bottom,order:ttb'
 let g:ctrlp_switch_buffer = 0
 let g:ctrlp_working_path_mode = 0
-let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
+let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 
 " colors!
 augroup ColorOverride
