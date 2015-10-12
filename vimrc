@@ -47,7 +47,13 @@ let g:pymode_folding = 0
 let g:pymode_doc = 1
 "let g:pymode_lint_ignore = "E302"
 let g:pymode_lint_cwindow = 0
-let g:pymode_rope_complete_on_dot = 0
+let g:pymode_lint_checkers = ['pylint', 'pyflakes', 'pep8', 'mccabe']
+let g:pymode_rope = 0
+let g:pymode_rope_lookup_project = 0
+let g:pymode_rope_completion = 0
+let g:pymode_rope_organize_imports_bind = '<leader>I'
+let g:pymode_rope_autoimport_bind = '<leader>i'
+
 
 " do not highlight matching parentheses (too slow)
 " let loaded_matchparen = 1
@@ -151,6 +157,14 @@ set viminfo='10,<100,:1000,/1000,@1000,%,n~/.vim/viminfo
 imap jj <ESC>
 map j :up<CR>
 
+" Implementation of some tips found here
+" http://sheerun.net/2014/03/21/how-to-boost-your-vim-productivity/
+vmap v            <Plug>(expand_region_expand)
+vmap <C-v>        <Plug>(expand_region_shrink)
+vnoremap <silent> s //e<C-r>=&selection=='exclusive'?'+1':''<CR><CR>
+    \:<C-u>call histdel('search',-1)<Bar>let @/=histget('search',-1)<CR>gv
+omap s :normal vs<CR>
+
 " This should actually be mapped for PHP files only
 inoremap if<cr> if () {<cr>}<up><right><right><right>
 inoremap for<cr> for () {<cr>}<up><right><right><right><right>
@@ -198,6 +212,11 @@ endfunction
 if !exists("autocommands_loaded")
     let autocommands_loaded = 1
     autocmd BufNewFile,BufReadPre * call SourceDotVim()
+    autocmd BufNewFile,BufRead *.tpl setlocal filetype=php fileencoding=utf8
+    autocmd BufNewFile,BufRead *.page setlocal filetype=php fileencoding=utf8
+    autocmd BufNewFile,BufRead *.form setlocal filetype=php fileencoding=utf8
+    autocmd BufNewFile,BufRead *.i setlocal filetype=cpp fileencoding=utf8
+    autocmd BufNewFile,BufRead *.jinja2 setlocal filetype=jinja
 endif
 
 " Fixes the damn backspace problem
@@ -206,6 +225,7 @@ if &term == "xterm-color"
     fixdel
 endif
 
+" Sometimes it is convenient to have some random numbers
 function! Random()
     if !exists("s:seeded")
         call libcallnr("libc.so.6", "srand", localtime() )
@@ -213,5 +233,3 @@ function! Random()
     endif
     return libcallnr("libc.so.6", "rand", 0 ) % 65536
 endfun
-
-au BufNewFile,BufRead *.jinja2 setlocal ft=jinja
