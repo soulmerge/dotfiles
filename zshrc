@@ -48,7 +48,7 @@ fi
 test -f /usr/bin/virtualenvwrapper.sh && source /usr/bin/virtualenvwrapper.sh
 
 # stderred
-if test -f /usr/local/lib64/stderred.so; then
+if test -f /usr/local/lib64/libstderred.so; then
     alias stderredon='export LD_PRELOAD="$LD_PRELOAD /usr/local/lib64/stderred.so"'
     alias stderredoff='export LD_PRELOAD="$(echo ${LD_PRELOAD/\/usr\/local\/lib64\/stderred.so/}|sed s/\^\ //)"'
     LD_PRELOAD="$LD_PRELOAD /usr/local/lib64/stderred.so"
