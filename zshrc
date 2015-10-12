@@ -33,29 +33,34 @@ setopt interactive_comments
 # word splitting for sh compatibility
 setopt shwordsplit
 
-# trash
-if test -f /usr/lib/libtrash.so; then
-    alias trashon='export LD_PRELOAD="$LD_PRELOAD /usr/lib/libtrash.so"'
-    alias trashoff='export LD_PRELOAD="$(echo ${LD_PRELOAD/\/usr\/lib\/libtrash.so/}|sed s/\^\ //)"'
-    export LD_PRELOAD=/usr/lib/libtrash.so
-else
-    alias trashon="echo libtrash not found"
-    alias trashoff="echo libtrash not found"
-    echo libtrash not found
-fi
-
 # virtualenvwrapper
 test -f /usr/bin/virtualenvwrapper.sh && source /usr/bin/virtualenvwrapper.sh
 
 # stderred
 if test -f /usr/local/lib64/libstderred.so; then
-    alias stderredon='export LD_PRELOAD="$LD_PRELOAD /usr/local/lib64/stderred.so"'
-    alias stderredoff='export LD_PRELOAD="$(echo ${LD_PRELOAD/\/usr\/local\/lib64\/stderred.so/}|sed s/\^\ //)"'
-    LD_PRELOAD="$LD_PRELOAD /usr/local/lib64/stderred.so"
+    alias stderredon='export LD_PRELOAD="$LD_PRELOAD /usr/local/lib64/libstderred.so"'
+    alias stderredoff='export LD_PRELOAD="$(echo ${LD_PRELOAD/\/usr\/local\/lib64\/libstderred.so/}|sed s/\^\ //)"'
+    LD_PRELOAD="$LD_PRELOAD /usr/local/lib64/libstderred.so"
 else
     alias stderredon="echo stderred not found"
     alias stderredoff="echo stderred not found"
     echo stderred not found
+fi
+
+# trash
+if test -f /usr/lib/libtrash.so; then
+    alias trashon="export LD_PRELOAD=\"\$LD_PRELOAD /usr/lib/libtrash.so\""
+    alias trashoff="export LD_PRELOAD=${LD_PRELOAD/\/usr\/lib\/libtrash.so/}"
+    export LD_PRELOAD="$LD_PRELOAD /usr/lib/libtrash.so"
+elif test -f /usr/local/bin/rm-trash; then
+    alias trashon=""
+    alias trashoff=""
+    alias rm='rm-trash'
+else
+    alias trashon="echo no trash found >&2"
+    alias trashoff="echo no trash found >&2"
+    echo no trash found >&2
+    alias rm='rm -i'
 fi
 
 # some apps won't will issue warnings with LD_PRELOAD
@@ -77,9 +82,6 @@ export LESS="--ignore-case --chop-long-lines --raw-control-chars"
 
 # aliases
 alias ls="ls --color=tty"
-if ! test -f /usr/lib/libtrash.so; then
-    alias rm='rm -i'
-fi
 alias cp='cp -i'
 alias mv='mv -i'
 alias grep='grep --exclude-dir=.svn --color=auto'
