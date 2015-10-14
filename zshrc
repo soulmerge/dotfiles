@@ -40,18 +40,16 @@ test -f /usr/bin/virtualenvwrapper.sh && source /usr/bin/virtualenvwrapper.sh
 if test -f /usr/local/lib64/libstderred.so; then
     alias stderredon='export LD_PRELOAD="$LD_PRELOAD /usr/local/lib64/libstderred.so"'
     alias stderredoff='export LD_PRELOAD="$(echo ${LD_PRELOAD/\/usr\/local\/lib64\/libstderred.so/}|sed s/\^\ //)"'
-    LD_PRELOAD="$LD_PRELOAD /usr/local/lib64/libstderred.so"
 else
     alias stderredon="echo stderred not found"
     alias stderredoff="echo stderred not found"
-    echo stderred not found
 fi
+stderredon
 
 # trash
 if test -f /usr/lib/libtrash.so; then
     alias trashon="export LD_PRELOAD=\"\$LD_PRELOAD /usr/lib/libtrash.so\""
     alias trashoff="export LD_PRELOAD=${LD_PRELOAD/\/usr\/lib\/libtrash.so/}"
-    export LD_PRELOAD="$LD_PRELOAD /usr/lib/libtrash.so"
 elif test -f /usr/local/bin/rm-trash; then
     alias trashon=""
     alias trashoff=""
@@ -59,9 +57,9 @@ elif test -f /usr/local/bin/rm-trash; then
 else
     alias trashon="echo no trash found >&2"
     alias trashoff="echo no trash found >&2"
-    echo no trash found >&2
     alias rm='rm -i'
 fi
+trashon
 
 # some apps won't will issue warnings with LD_PRELOAD
 alias offlineimap="LD_PRELOAD= offlineimap"
@@ -69,6 +67,9 @@ alias firefox="LD_PRELOAD= firefox"
 alias thunderbird="LD_PRELOAD= thunderbird"
 alias wine="LD_PRELOAD= wine"
 alias skype="LD_PRELOAD= skype"
+
+# switching away from ack
+alias ack="echo 'Use ag!' >&2; sleep 1; ag"
 
 # environment variables
 PATH=~/bin/:$PATH:/usr/local/wheelbin:/usr/games/bin/:
