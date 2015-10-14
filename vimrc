@@ -47,12 +47,12 @@ let g:pymode_folding = 0
 let g:pymode_doc = 1
 "let g:pymode_lint_ignore = "E302"
 let g:pymode_lint_cwindow = 0
-let g:pymode_lint_checkers = ['pylint', 'pyflakes', 'pep8', 'mccabe']
+let g:pymode_lint_checkers = ['pyflakes', 'pep8', 'mccabe']
 let g:pymode_rope = 0
 let g:pymode_rope_lookup_project = 0
 let g:pymode_rope_completion = 0
 let g:pymode_rope_organize_imports_bind = '<leader>I'
-let g:pymode_rope_autoimport_bind = '<leader>i'
+" let g:pymode_rope_autoimport_bind = '<leader>i'
 
 
 " do not highlight matching parentheses (too slow)
@@ -86,6 +86,7 @@ map <leader>l <C-W>k<C-W>_zz
 map <leader>a <C-W>j<C-W>_zz
 map <leader>e <C-W>l<C-W>_zz
 map <leader>i <C-W>h<C-W>_zz
+map <leader>s :split<cr>
 map <leader>v <C-W>_zz
 map <leader>o <C-W>o
 map <leader>c <C-W><C-C>
@@ -100,12 +101,11 @@ map <leader><leader> :CtrlP<cr>
 set lazyredraw
 set showmatch
 set incsearch
-nnoremap <leader>i `[v`]
 
 let g:ctrlp_match_window = 'bottom,order:ttb'
 let g:ctrlp_switch_buffer = 0
 let g:ctrlp_working_path_mode = 0
-let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+let g:ctrlp_user_command = 'ag %s -l --nocolor --ignore _cache -g ""'
 
 " colors!
 augroup ColorOverride
@@ -133,7 +133,7 @@ noremap Y "*y
 " Highlight searches, but allow disabling
 set hlsearch
 map <silent> <F4>      :noh<CR>
-map <silent> <leader>s :noh<CR>
+map <silent> <leader>h :noh<CR>
 
 " I wich I could set this to a higher value
 set history=10000
