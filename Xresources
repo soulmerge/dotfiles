@@ -10,7 +10,7 @@ URxvt.scrollBar: False
 
 ! open URLs in firefox
 URxvt.perl-ext-common: default,matcher,font-size
-URxvt.url-launcher: /usr/bin/firefox
+URxvt.url-launcher: /usr/local/bin/firefox
 URxvt.matcher.button: 2
 URxvt.colorUL: #4682B4
 
@@ -45,12 +45,12 @@ URxvt.keysym.C-KP_Subtract: perl:font-size:decrease
 
 ! Shades
 #define black   #101112
-#define gray01  #282C33
-#define gray02  #383E47
-#define gray03  #586270
-#define gray04  #798494
-#define gray05  #BCC5D1
-#define gray06  #D8D8D8
+#define gray01  #42464D
+#define gray02  #525861
+#define gray03  #727C8A
+#define gray04  #939EAE
+#define gray05  #D6DFEB
+#define gray06  #E5E5E5
 #define white   #FDFEFF
 
 ! Colors
