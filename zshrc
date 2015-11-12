@@ -173,6 +173,13 @@ setopt PROMPT_SUBST
 PROMPT="$USER_COLOR%n$HOST_COLOR@%m$NC:%~$LAST_CHAR "
 RPROMPT='$(battery)'
 
+# convenience function for cloning score projects
+CloneScore() {
+    git clone https://github.com/score-framework/$1
+    cd $1
+    git remote set-url --push origin git@github.com:score-framework/$1.git
+}
+
 # End of lines added by compinstall
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.history
