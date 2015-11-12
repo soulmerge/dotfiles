@@ -54,6 +54,14 @@ let g:pymode_rope_completion = 0
 let g:pymode_rope_organize_imports_bind = '<leader>I'
 " let g:pymode_rope_autoimport_bind = '<leader>i'
 
+" plugin: syntastic
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_mode_map = {
+    \ "mode": "active",
+    \ "active_filetypes": ["javascript", "php"],
+    \ "passive_filetypes": [] }
 
 " do not highlight matching parentheses (too slow)
 " let loaded_matchparen = 1
