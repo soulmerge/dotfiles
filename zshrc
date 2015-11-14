@@ -1,3 +1,6 @@
+# start off with clean LD_PRELOAD
+export LD_PRELOAD=
+
 # set emacs mode
 bindkey -e
 
@@ -36,20 +39,13 @@ setopt shwordsplit
 # virtualenvwrapper
 test -f /usr/bin/virtualenvwrapper.sh && source /usr/bin/virtualenvwrapper.sh
 
-# stderred
-if test -f /usr/local/lib64/libstderred.so; then
-    alias stderredon='export LD_PRELOAD="$LD_PRELOAD /usr/local/lib64/libstderred.so"'
-    alias stderredoff='export LD_PRELOAD="$(echo ${LD_PRELOAD/\/usr\/local\/lib64\/libstderred.so/}|sed s/\^\ //)"'
-else
-    alias stderredon="echo stderred not found"
-    alias stderredoff="echo stderred not found"
-fi
-stderredon
-
 # trash
 if test -f /usr/lib/libtrash.so; then
     alias trashon="export LD_PRELOAD=\"\$LD_PRELOAD /usr/lib/libtrash.so\""
     alias trashoff="export LD_PRELOAD=${LD_PRELOAD/\/usr\/lib\/libtrash.so/}"
+elif test -f /usr/local/lib/libtrash.so; then
+    alias trashon="export LD_PRELOAD=\"\$LD_PRELOAD /usr/local/lib/libtrash.so\""
+    alias trashoff="export LD_PRELOAD=${LD_PRELOAD/\/usr\/local\/lib\/libtrash.so/}"
 elif test -f /usr/local/bin/rm-trash; then
     alias trashon=""
     alias trashoff=""
@@ -60,6 +56,16 @@ else
     alias rm='rm -i'
 fi
 trashon
+
+# stderred
+if test -f /usr/local/lib64/libstderred.so; then
+    alias stderredon='export LD_PRELOAD="$LD_PRELOAD /usr/local/lib64/libstderred.so"'
+    alias stderredoff='export LD_PRELOAD="$(echo ${LD_PRELOAD/\/usr\/local\/lib64\/libstderred.so/}|sed s/\^\ //)"'
+else
+    alias stderredon="echo stderred not found"
+    alias stderredoff="echo stderred not found"
+fi
+stderredon
 
 # some apps won't will issue warnings with LD_PRELOAD
 alias offlineimap="LD_PRELOAD= offlineimap"
