@@ -1,0 +1,5 @@
+[Desktop Entry]
+Name=spotify
+Exec=/usr/bin/google-chrome-stable --app=http://play.spotify.com
+Icon=/home/soulmerge/.local/share/applications/spotify.png
+Type=Application
