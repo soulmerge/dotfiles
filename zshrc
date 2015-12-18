@@ -102,10 +102,15 @@ alias vim.="vim ."
 # big xterm for presentations
 alias bigxterm='xterm -font -*-fixed-medium-r-*-*-20-*-*-*-*-*-iso8859-* -geometry 70x24'
 
-# init keychain
-keychain -q ~/.ssh/id_rsa
-. ~/.keychain/panther-sh
-. ~/.keychain/panther-sh-gpg
+# ssh-agent; copied from over here:
+# http://insights-into-software.blogspot.co.at/2010/03/caching-ssh-private-keys-using-openssh.html
+run_ssh_agent="${HOME}/.ssh/agent-for-${HOST}.pid"
+[ -f "$run_ssh_agent" ] && . "$run_ssh_agent" > /dev/null 2>&1
+if ! kill -0 $SSH_AGENT_PID > /dev/null 2>&1; then
+    ssh-agent -s > "$run_ssh_agent"
+    . "$run_ssh_agent"
+    ssh-add
+fi
 
 # colors:
 black='%{[0;30m%}'
