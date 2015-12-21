@@ -86,6 +86,7 @@ export MANPAGER="/usr/bin/less -isr"
 export LANG=en_US.utf8
 export TZ="Europe/Vienna"
 export LESS="--ignore-case --chop-long-lines --raw-control-chars"
+export TIMEFMT=$'real\t%E\nuser\t%U\nsys\t%S'
 
 # aliases
 alias ls="ls --color=tty"
