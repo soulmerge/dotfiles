@@ -69,6 +69,17 @@ let g:syntastic_mode_map = {
 " disable mouse entirely
 set mouse=
 
+" n will always search forward,
+" N will always search backward
+" (https://github.com/mhinz/vim-galore)
+nnoremap <expr> n  'Nn'[v:searchforward]
+nnoremap <expr> N  'nN'[v:searchforward]
+
+" move line upwards/downwards
+" (https://github.com/mhinz/vim-galore)
+nnoremap <leader><up>   :<c-u>execute 'move -1-'. v:count1<cr>
+nnoremap <leader><down> :<c-u>execute 'move +'. v:count1<cr>
+
 " set shell
 set shell=zsh
 
