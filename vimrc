@@ -45,7 +45,8 @@ map <silent> <t_S8>  <S-F8>
 let g:pymode_python = 'python3'
 let g:pymode_folding = 0
 let g:pymode_doc = 1
-"let g:pymode_lint_ignore = "E302"
+let g:pymode_lint_ignore = "E711"
+" let g:pymode_lint_ignore = "E711,E301"
 let g:pymode_lint_cwindow = 0
 let g:pymode_lint_checkers = ['pyflakes', 'pep8', 'mccabe']
 let g:pymode_rope = 0
@@ -188,7 +189,7 @@ omap s :normal vs<CR>
 inoremap if<cr> if () {<cr>}<up><right><right><right>
 inoremap for<cr> for () {<cr>}<up><right><right><right><right>
 inoremap foreach<cr> foreach () {<cr>}<up><right><right><right><right><right><right><right><right>
-inoremap fori<cr> for () {<cr>}<up><right><right><right><right>$i = 0; $i < ; $i++<left><left><left><left><left><left>
+inoremap fori<cr> for () {<cr>}<up><right><right><right><right>var i = 0; i < ; i++<left><left><left><left><left>
 
 " Nice status lines
 set laststatus=2
