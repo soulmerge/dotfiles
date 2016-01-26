@@ -1,0 +1,52 @@
+[extensions]
+hgsubversion = ~/.mercurial/extensions/hgsubversion/hgsubversion
+mercurial_keyring = ~/.mercurial/extensions/mercurial_keyring/mercurial_keyring.py
+onsub = ~/.mercurial/extensions/onsub/onsub.py
+hggit = ~/.mercurial/extensions/hg-git/hggit
+graphlog =
+rebase =
+mq =
+color =
+fetch =
+purge =
+extdiff =
+churn =
+shelve =
+record =
+hgext.bookmarks =
+pager = 
+
+[hooks]
+update.actionlog = python:~/.mercurial/extensions/actionlog.py:updatehook
+
+[ui]
+username = Necdet Can Atesman <can@strg.at>
+merge = vimdiff
+
+[merge-tools]
+vimdiff.executable = vim
+vimdiff.args = -d $base $local $output $other +close +close
+
+[auth]
+strg.prefix = hg.strg.at
+strg.username = can
+strg.schemes = https 
+
+[extdiff]
+cmd.vimdiff =
+
+[alias]
+latest  = log --limit 5
+glatest = glog --limit 5
+sync    = !$HG fetch && $HG push
+mergelog    = log -r "ancestors('$1') - ancestors('$2')"
+tomerge     = !for i in `$HG heads --template '{branches}\n' | sort | uniq`; do $HG mergelog $i $1 --template '{branches}\n' | sort | uniq; done | sort | uniq
+branchmerge = !$HG merge $1 && $HG ci -m "Merge: $1 -> $($HG id -b)"
+bm          = branchmerge
+mkbranch    = !$HG branch $1 && $HG ci -m 'Created branch $1'
+updiff      = !$HG diff -r ".:: and branch(.)"
+upstat      = !$HG diff -r ".:: and branch(.)" --stat
+uplog	    = !$HG log -r ".:: and branch(.) and not ."
+pulldiff    = !$HG pull && $HG updiff
+pullstat    = !$HG pull && $HG upstat
+bump0       = !$HG update v0 && sed -i "s/version=[^,]\+,/version='$1',/" setup.py && $HG commit -m "Version bump ($1)" setup.py && $HG tag $1 && hg update default && hg branchmerge v0 && hg update v0 && hg push
