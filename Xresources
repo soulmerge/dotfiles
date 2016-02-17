@@ -63,9 +63,9 @@ URxvt.keysym.C-KP_Subtract: perl:font-size:decrease
 #define magenta #B59CD8
 #define pink    #CC99B3
 
-*foreground:   gray06
-*background:   black
-*cursorColor:  gray06
+URxvt**foreground:   gray06
+URxvt**background:   black
+URxvt**cursorColor:  gray06
 
 *color0:       black
 *color1:       orange
