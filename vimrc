@@ -70,12 +70,6 @@ let g:syntastic_mode_map = {
 " disable mouse entirely
 set mouse=
 
-" n will always search forward,
-" N will always search backward
-" (https://github.com/mhinz/vim-galore)
-nnoremap <expr> n  'Nn'[v:searchforward]
-nnoremap <expr> N  'nN'[v:searchforward]
-
 " move line upwards/downwards
 " (https://github.com/mhinz/vim-galore)
 nnoremap <leader><up>   :<c-u>execute 'move -1-'. v:count1<cr>
@@ -176,6 +170,8 @@ set viminfo='10,<100,:1000,/1000,@1000,%,n~/.vim/viminfo
 " avoid hitting ESC
 imap jj <ESC>
 map j :up<CR>
+imap -- <ESC>
+map - :up<CR>
 
 " Implementation of some tips found here
 " http://sheerun.net/2014/03/21/how-to-boost-your-vim-productivity/
