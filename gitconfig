@@ -1,6 +1,6 @@
 [user]
-	email = c.atesman@gmx.net
-	name = Necdet Can Atesman
+    email = c.atesman@gmx.net
+    name = Necdet Can Ateşman
 
 [alias]
     co = checkout
@@ -12,4 +12,4 @@
     glog = !"git glog1"
 
 [push]
-	default = simple
+    default = simple

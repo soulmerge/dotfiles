@@ -170,6 +170,8 @@ set viminfo='10,<100,:1000,/1000,@1000,%,n~/.vim/viminfo
 " avoid hitting ESC
 imap jj <ESC>
 map j :up<CR>
+imap -- <ESC>
+map - :up<CR>
 
 " Implementation of some tips found here
 " http://sheerun.net/2014/03/21/how-to-boost-your-vim-productivity/
