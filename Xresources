@@ -3,8 +3,8 @@ xterm*font: -gnu-unifont-*-*-*-*-*-*-*-*-*-*-*-*
 xterm*saveLines: 65535
 
 ! urxvt configuration
-URxvt.font: xft:Inconsolata:size=11
-URxvt.boldFont: xft:Inconsolata:size=11:style=bold
+URxvt.font: xft:Inconsolata:size=14
+URxvt.boldFont: xft:Inconsolata:size=14:style=bold
 URxvt.saveLines: 65535
 URxvt.scrollBar: False
 
