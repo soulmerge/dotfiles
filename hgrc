@@ -2,7 +2,6 @@
 # hgsubversion = ~/.mercurial/extensions/hgsubversion/hgsubversion
 mercurial_keyring = ~/.mercurial/extensions/mercurial_keyring/mercurial_keyring.py
 onsub = ~/.mercurial/extensions/onsub/onsub.py
-hggit = ~/.mercurial/extensions/hg-git/hggit
 graphlog =
 rebase =
 mq =

@@ -222,24 +222,17 @@ export NVM_DIR="/home/soulmerge/.nvm"
 # The next block was inserted by the `cli' module of
 # The SCORE Framework (http://score-framework.org)
 
-  # The following line makes sure that you can access the `score'
-  # application in your shell:
-  PATH=$PATH:/home/soulmerge/.local/bin
+    # The following line makes sure that you can access the `score'
+    # application in your shell:
+    PATH=$PATH:/home/soulmerge/.local/bin
 
 # The next block was inserted by the `projects' module of
 # The SCORE Framework (http://score-framework.org)
 
-  # This next line updates your shell prompt to include the name of
-  # the current project.
-  if [ -n "$VIRTUAL_ENV_NAME" ]; then
-    export PROMPT="%{[0;33m%}(${VIRTUAL_ENV_NAME})%{[0m%} $PROMPT"
-  elif [ -n "$VIRTUAL_ENV" ]; then
-    export PROMPT="%{[0;33m%}(${VIRTUAL_ENV##*/})%{[0m%} $PROMPT"
-  fi
-
-# added by cpan
-PATH="$PATH:/home/soulmerge/perl5/bin"; export PATH;
-PERL5LIB="/home/soulmerge/perl5/lib/perl5${PERL5LIB+:}${PERL5LIB}"; export PERL5LIB;
-PERL_LOCAL_LIB_ROOT="/home/soulmerge/perl5${PERL_LOCAL_LIB_ROOT+:}${PERL_LOCAL_LIB_ROOT}"; export PERL_LOCAL_LIB_ROOT;
-PERL_MB_OPT="--install_base \"/home/soulmerge/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=/home/soulmerge/perl5"; export PERL_MM_OPT;
+    # This next line updates your shell prompt to include the name of
+    # the current project.
+    if [ -n "$VIRTUAL_ENV_NAME" ]; then
+        export PROMPT="%{[0;33m%}(${VIRTUAL_ENV_NAME})%{[0m%}$PROMPT"
+    elif [ -n "$VIRTUAL_ENV" ]; then
+        export PROMPT="%{[0;33m%}(${VIRTUAL_ENV##*/})%{[0m%}$PROMPT"
+    fi
