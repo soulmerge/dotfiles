@@ -36,6 +36,13 @@ setopt interactive_comments
 # word splitting for sh compatibility
 setopt shwordsplit
 
+# if enabled, EQUALS would replace words starting with an equals character
+# with the full path to the command (i.e. `cat =python` is equivalent to
+# `cat $(which python)`). Do not want this feature on gentoo, as it is a
+# nuisance when installing a specific version of a package
+# (emerge =app-shells/zsh-5.2)
+unsetopt EQUALS
+
 # virtualenvwrapper
 test -f /usr/bin/virtualenvwrapper.sh && source /usr/bin/virtualenvwrapper.sh
 
@@ -93,6 +100,7 @@ alias ls="ls --color=tty"
 alias cp='cp -i'
 alias mv='mv -i'
 alias grep='grep --exclude-dir=.svn --color=auto'
+alias load='score projects load'
 
 # common typos
 alias sl="ls"
@@ -219,6 +227,9 @@ compinit
 export NVM_DIR="/home/soulmerge/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
+# browserstack authentication
+[ -f ~/.browserstackrc ] && source ~/.browserstackrc
+
 # The next block was inserted by the `cli' module of
 # The SCORE Framework (http://score-framework.org)
 
@@ -236,3 +247,18 @@ export NVM_DIR="/home/soulmerge/.nvm"
     elif [ -n "$VIRTUAL_ENV" ]; then
         export PROMPT="%{[0;33m%}(${VIRTUAL_ENV##*/})%{[0m%}$PROMPT"
     fi
+
+preexec() {
+    export _PREVCMD_START_DATE=$(date "+%Y-%m-%d")
+    export _PREVCMD_START=$(date "+%H:%M:%S")
+    export _PREVCMD_START_TS=$(date "+%s")
+    export _PREVCMD_COMMAND=$1
+}
+
+precmd() {
+    RESULT=$?
+    if [ -n "$_PREVCMD_START_TS" -a -n "$_PREVCMD_COMMAND" ]; then
+        ts_diff=$(( $(date "+%s") - $_PREVCMD_START_TS ))
+        echo "$_PREVCMD_START ${ts_diff}s $RESULT: $_PREVCMD_COMMAND" >> ~/.shell-history/$_PREVCMD_START_DATE.log
+    fi
+}
