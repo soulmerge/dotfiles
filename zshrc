@@ -100,6 +100,7 @@ alias ls="ls --color=tty"
 alias cp='cp -i'
 alias mv='mv -i'
 alias grep='grep --exclude-dir=.svn --color=auto'
+alias load='score projects load'
 
 # common typos
 alias sl="ls"
