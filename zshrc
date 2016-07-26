@@ -227,6 +227,9 @@ compinit
 export NVM_DIR="/home/soulmerge/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
+# browserstack authentication
+[ -f ~/.browserstackrc ] && source ~/.browserstackrc
+
 # The next block was inserted by the `cli' module of
 # The SCORE Framework (http://score-framework.org)
 
