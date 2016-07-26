@@ -247,3 +247,18 @@ export NVM_DIR="/home/soulmerge/.nvm"
     elif [ -n "$VIRTUAL_ENV" ]; then
         export PROMPT="%{[0;33m%}(${VIRTUAL_ENV##*/})%{[0m%}$PROMPT"
     fi
+
+preexec() {
+    export _PREVCMD_START_DATE=$(date "+%Y-%m-%d")
+    export _PREVCMD_START=$(date "+%H:%M:%S")
+    export _PREVCMD_START_TS=$(date "+%s")
+    export _PREVCMD_COMMAND=$1
+}
+
+precmd() {
+    RESULT=$?
+    if [ -n "$_PREVCMD_START_TS" -a -n "$_PREVCMD_COMMAND" ]; then
+        ts_diff=$(( $(date "+%s") - $_PREVCMD_START_TS ))
+        echo "$_PREVCMD_START ${ts_diff}s $RESULT: $_PREVCMD_COMMAND" >> ~/.shell-history/$_PREVCMD_START_DATE.log
+    fi
+}
