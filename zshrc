@@ -36,6 +36,13 @@ setopt interactive_comments
 # word splitting for sh compatibility
 setopt shwordsplit
 
+# if enabled, EQUALS would replace words starting with an equals character
+# with the full path to the command (i.e. `cat =python` is equivalent to
+# `cat $(which python)`). Do not want this feature on gentoo, as it is a
+# nuisance when installing a specific version of a package
+# (emerge =app-shells/zsh-5.2)
+unsetopt EQUALS
+
 # virtualenvwrapper
 test -f /usr/bin/virtualenvwrapper.sh && source /usr/bin/virtualenvwrapper.sh
 
