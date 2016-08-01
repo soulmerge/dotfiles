@@ -253,12 +253,13 @@ preexec() {
     export _PREVCMD_START=$(date "+%H:%M:%S")
     export _PREVCMD_START_TS=$(date "+%s")
     export _PREVCMD_COMMAND=$1
+    export _PREVCMD_CWD=$(pwd)
 }
 
 precmd() {
     RESULT=$?
     if [ -n "$_PREVCMD_START_TS" -a -n "$_PREVCMD_COMMAND" ]; then
         ts_diff=$(( $(date "+%s") - $_PREVCMD_START_TS ))
-        echo "$_PREVCMD_START ${ts_diff}s $RESULT: $_PREVCMD_COMMAND" >> ~/.shell-history/$_PREVCMD_START_DATE.log
+        echo "$_PREVCMD_START $_PREVCMD_CWD# $_PREVCMD_COMMAND -> $RESULT in ${ts_diff}s" >> ~/.shell-history/$_PREVCMD_START_DATE.log
     fi
 }
