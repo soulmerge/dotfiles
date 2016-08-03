@@ -1,3 +1,4 @@
+#!/usr/bin/env xdg-open
 [Desktop Entry]
 Name=spotify
 Exec=/usr/bin/google-chrome-stable --app=http://play.spotify.com
