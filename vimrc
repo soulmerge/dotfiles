@@ -124,16 +124,18 @@ let g:ctrlp_user_command = 'ag %s -l --nocolor --ignore _cache -g ""'
 " colors!
 augroup ColorOverride
     au!
-    autocmd ColorScheme * highlight Normal ctermbg=0
-    autocmd ColorScheme * highlight StatusLine ctermfg=15 ctermbg=11
-    autocmd ColorScheme * highlight StatusLineNC ctermfg=12 ctermbg=10
+    " autocmd ColorScheme * highlight Normal ctermbg=0
+    autocmd ColorScheme * highlight StatusLine ctermfg=12 ctermbg=10
+    autocmd ColorScheme * highlight StatusLineNC ctermfg=14 ctermbg=8
     " leading/trailing characters for line wraps (:help highlight)
     autocmd ColorScheme * highlight NonText term=bold ctermfg=4
-    autocmd ColorScheme * highlight Search ctermbg=1
-    autocmd ColorScheme * highlight IncSearch ctermbg=3
+    " autocmd ColorScheme * highlight Search ctermbg=1
+    " autocmd ColorScheme * highlight IncSearch ctermbg=3
 augroup END
 
-colorscheme crayon
+" colorscheme antares
+set t_Co=256
+colorscheme CandyPaper
 
 " syntax highlighting
 syntax on
