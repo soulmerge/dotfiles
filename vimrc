@@ -5,6 +5,9 @@ filetype indent on
 " Nope, we don't want to be vi-compatible
 set nocompatible
 
+" I like the default behaviour of cindent
+set cindent
+
 " load pathogen
 source ~/.vim/plugins/pathogen/autoload/pathogen.vim
 
