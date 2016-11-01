@@ -47,24 +47,6 @@ unsetopt EQUALS
 test -f /usr/bin/virtualenvwrapper.sh && source /usr/bin/virtualenvwrapper.sh
 test -f /usr/share/virtualenvwrapper/virtualenvwrapper.sh && source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
 
-# trash
-if test -f /usr/lib/libtrash.so; then
-    alias trashon="export LD_PRELOAD=\"\$LD_PRELOAD /usr/lib/libtrash.so\""
-    alias trashoff="export LD_PRELOAD=${LD_PRELOAD/\/usr\/lib\/libtrash.so/}"
-elif test -f /usr/local/lib/libtrash.so; then
-    alias trashon="export LD_PRELOAD=\"\$LD_PRELOAD /usr/local/lib/libtrash.so\""
-    alias trashoff="export LD_PRELOAD=${LD_PRELOAD/\/usr\/local\/lib\/libtrash.so/}"
-elif test -f /usr/local/bin/rm-trash; then
-    alias trashon=""
-    alias trashoff=""
-    alias rm='rm-trash'
-else
-    alias trashon="echo no trash found >&2"
-    alias trashoff="echo no trash found >&2"
-    alias rm='rm -i'
-fi
-trashon
-
 # stderred
 if test -f /usr/local/lib/libstderred.so; then
     alias stderredon='export LD_PRELOAD="$LD_PRELOAD /usr/local/lib/libstderred.so"'
