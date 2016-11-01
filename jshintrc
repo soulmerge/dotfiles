@@ -1,4 +1,14 @@
 {
     "shadow": true,
-    "scripturl": true
+    "scripturl": true,
+    "undef": true,
+    "unused": "vars",
+    "globals": {
+        "document": false,
+        "window": false,
+        "define": false,
+        "alert": false,
+        "console": false,
+        "require": false
+    }
 }
