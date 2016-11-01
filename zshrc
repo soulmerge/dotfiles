@@ -45,6 +45,7 @@ unsetopt EQUALS
 
 # virtualenvwrapper
 test -f /usr/bin/virtualenvwrapper.sh && source /usr/bin/virtualenvwrapper.sh
+test -f /usr/share/virtualenvwrapper/virtualenvwrapper.sh && source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
 
 # trash
 if test -f /usr/lib/libtrash.so; then
@@ -65,9 +66,9 @@ fi
 trashon
 
 # stderred
-if test -f /usr/local/lib64/libstderred.so; then
-    alias stderredon='export LD_PRELOAD="$LD_PRELOAD /usr/local/lib64/libstderred.so"'
-    alias stderredoff='export LD_PRELOAD="$(echo ${LD_PRELOAD/\/usr\/local\/lib64\/libstderred.so/}|sed s/\^\ //)"'
+if test -f /usr/local/lib/libstderred.so; then
+    alias stderredon='export LD_PRELOAD="$LD_PRELOAD /usr/local/lib/libstderred.so"'
+    alias stderredoff='export LD_PRELOAD="$(echo ${LD_PRELOAD/\/usr\/local\/lib\/libstderred.so/}|sed s/\^\ //)"'
 else
     alias stderredon="echo stderred not found"
     alias stderredoff="echo stderred not found"
@@ -85,7 +86,7 @@ alias skype="LD_PRELOAD= skype"
 alias ack="echo 'Use ag!' >&2; sleep 1; ag"
 
 # environment variables
-PATH=~/bin/:$PATH:/usr/local/wheelbin:/usr/games/bin/:
+PATH=~/bin/:$PATH:/usr/local/wheelbin:/usr/games/bin/:/usr/sbin:/sbin:
 export PATH
 export INPUTRC=$HOME/.inputrc
 export EDITOR=vim
