@@ -45,29 +45,12 @@ unsetopt EQUALS
 
 # virtualenvwrapper
 test -f /usr/bin/virtualenvwrapper.sh && source /usr/bin/virtualenvwrapper.sh
-
-# trash
-if test -f /usr/lib/libtrash.so; then
-    alias trashon="export LD_PRELOAD=\"\$LD_PRELOAD /usr/lib/libtrash.so\""
-    alias trashoff="export LD_PRELOAD=${LD_PRELOAD/\/usr\/lib\/libtrash.so/}"
-elif test -f /usr/local/lib/libtrash.so; then
-    alias trashon="export LD_PRELOAD=\"\$LD_PRELOAD /usr/local/lib/libtrash.so\""
-    alias trashoff="export LD_PRELOAD=${LD_PRELOAD/\/usr\/local\/lib\/libtrash.so/}"
-elif test -f /usr/local/bin/rm-trash; then
-    alias trashon=""
-    alias trashoff=""
-    alias rm='rm-trash'
-else
-    alias trashon="echo no trash found >&2"
-    alias trashoff="echo no trash found >&2"
-    alias rm='rm -i'
-fi
-trashon
+test -f /usr/share/virtualenvwrapper/virtualenvwrapper.sh && source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
 
 # stderred
-if test -f /usr/local/lib64/libstderred.so; then
-    alias stderredon='export LD_PRELOAD="$LD_PRELOAD /usr/local/lib64/libstderred.so"'
-    alias stderredoff='export LD_PRELOAD="$(echo ${LD_PRELOAD/\/usr\/local\/lib64\/libstderred.so/}|sed s/\^\ //)"'
+if test -f /usr/local/lib/libstderred.so; then
+    alias stderredon='export LD_PRELOAD="$LD_PRELOAD /usr/local/lib/libstderred.so"'
+    alias stderredoff='export LD_PRELOAD="$(echo ${LD_PRELOAD/\/usr\/local\/lib\/libstderred.so/}|sed s/\^\ //)"'
 else
     alias stderredon="echo stderred not found"
     alias stderredoff="echo stderred not found"
@@ -85,7 +68,7 @@ alias skype="LD_PRELOAD= skype"
 alias ack="echo 'Use ag!' >&2; sleep 1; ag"
 
 # environment variables
-PATH=~/bin/:$PATH:/usr/local/wheelbin:/usr/games/bin/:
+PATH=~/bin/:$PATH:/usr/local/wheelbin:/usr/games/bin/:/usr/sbin:/sbin:
 export PATH
 export INPUTRC=$HOME/.inputrc
 export EDITOR=vim
@@ -94,6 +77,7 @@ export LANG=en_US.utf8
 export TZ="Europe/Vienna"
 export LESS="--ignore-case --chop-long-lines --raw-control-chars"
 export TIMEFMT=$'real\t%E\nuser\t%U\nsys\t%S'
+export PAGER="less"
 
 # aliases
 alias ls="ls --color=tty"
@@ -110,16 +94,6 @@ alias vim.="vim ."
 
 # big xterm for presentations
 alias bigxterm='xterm -font -*-fixed-medium-r-*-*-20-*-*-*-*-*-iso8859-* -geometry 70x24'
-
-# ssh-agent; copied from over here:
-# http://insights-into-software.blogspot.co.at/2010/03/caching-ssh-private-keys-using-openssh.html
-run_ssh_agent="${HOME}/.ssh/agent-for-${HOST}.pid"
-[ -f "$run_ssh_agent" ] && . "$run_ssh_agent" > /dev/null 2>&1
-if ! kill -0 $SSH_AGENT_PID > /dev/null 2>&1; then
-    ssh-agent -s > "$run_ssh_agent"
-    . "$run_ssh_agent"
-    ssh-add
-fi
 
 # colors:
 black='%{[0;30m%}'
@@ -211,7 +185,7 @@ setopt extendedglob
 # The following lines were added by compinstall
 
 # completion
-zstyle ':completion:*' completer _expand _complete _ignored _correct _approximate
+zstyle ':completion:*' completer _expand _complete _ignored _correct
 zstyle ':completion:*' expand suffix
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*' list-colors ''

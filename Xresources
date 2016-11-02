@@ -67,20 +67,20 @@ URxvt**foreground:   gray06
 URxvt**background:   black
 URxvt**cursorColor:  gray06
 
-*color0:       black
-*color1:       orange
-*color2:       green
-*color3:       yellow
-*color4:       blue
-*color5:       magenta
-*color6:       cyan
-*color7:       gray05
+URxvt*color0:       black
+URxvt*color1:       orange
+URxvt*color2:       green
+URxvt*color3:       yellow
+URxvt*color4:       blue
+URxvt*color5:       magenta
+URxvt*color6:       cyan
+URxvt*color7:       gray05
 
-*color8:       gray03
-*color9:       red
-*color10:      gray01
-*color11:      gray02
-*color12:      gray04
-*color13:      gray06
-*color14:      pink
-*color15:      white
+URxvt*color8:       gray03
+URxvt*color9:       red
+URxvt*color10:      gray01
+URxvt*color11:      gray02
+URxvt*color12:      gray04
+URxvt*color13:      gray06
+URxvt*color14:      pink
+URxvt*color15:      white
