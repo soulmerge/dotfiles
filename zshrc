@@ -185,7 +185,7 @@ setopt extendedglob
 # The following lines were added by compinstall
 
 # completion
-zstyle ':completion:*' completer _expand _complete _ignored _correct _approximate
+zstyle ':completion:*' completer _expand _complete _ignored _correct
 zstyle ':completion:*' expand suffix
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*' list-colors ''
