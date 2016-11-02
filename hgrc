@@ -12,6 +12,7 @@ shelve =
 record =
 hgext.bookmarks =
 pager = 
+onsub = ~/.mercurial/extensions/onsub/onsub.py
 
 [hooks]
 update.actionlog = python:~/.mercurial/extensions/actionlog.py:updatehook
