@@ -16,9 +16,6 @@
 [submodule "vim/plugins/python-mode"]
 	path = vim/plugins/python-mode
 	url = https://github.com/klen/python-mode.git
-[submodule "vim/plugins/crayon"]
-	path = vim/plugins/crayon
-	url = https://github.com/dylanaraps/crayon.git
 [submodule "vim/plugins/syntastic"]
 	path = vim/plugins/syntastic
 	url = https://github.com/scrooloose/syntastic.git
