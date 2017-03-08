@@ -1,5 +1,5 @@
 [extensions]
-mercurial_keyring = ~/.mercurial/extensions/mercurial_keyring/mercurial_keyring.py
+mercurial_keyring = 
 graphlog =
 rebase =
 mq =
