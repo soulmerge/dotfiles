@@ -14,7 +14,7 @@ hgext.bookmarks =
 pager = 
 
 [hooks]
-update.actionlog = python:~/.mercurial/extensions/actionlog.py:updatehook
+update.actionlog = python:~/.mercurial/actionlog.py:updatehook
 
 [ui]
 username = Necdet Can Atesman <can@strg.at>
