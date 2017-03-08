@@ -68,12 +68,11 @@ alias skype="LD_PRELOAD= skype"
 alias ack="echo 'Use ag!' >&2; sleep 1; ag"
 
 # environment variables
-PATH=~/bin/:$PATH:/usr/local/wheelbin:/usr/games/bin/:/usr/sbin:/sbin:
+PATH=~/.npm-global/bin:~/bin/:$PATH:/usr/local/wheelbin:/usr/games/bin/:/usr/sbin:/sbin:/opt/miniconda3/bin:
 export PATH
 export INPUTRC=$HOME/.inputrc
 export EDITOR=vim
 export MANPAGER="/usr/bin/less -isr"
-export LANG=en_US.utf8
 export TZ="Europe/Vienna"
 export LESS="--ignore-case --chop-long-lines --raw-control-chars"
 export TIMEFMT=$'real\t%E\nuser\t%U\nsys\t%S'
@@ -91,6 +90,13 @@ alias sl="ls"
 alias cim="vim"
 alias vmi="vim"
 alias vim.="vim ."
+
+
+# set locale
+if locale -a | grep -q en_DK; then
+    export LANG=en_DK.utf-8
+    export LANGUAGE=en_DK.utf-8
+fi
 
 # big xterm for presentations
 alias bigxterm='xterm -font -*-fixed-medium-r-*-*-20-*-*-*-*-*-iso8859-* -geometry 70x24'
