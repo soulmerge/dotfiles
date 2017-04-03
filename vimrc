@@ -255,3 +255,6 @@ function! Random()
     endif
     return libcallnr("libc.so.6", "rand", 0 ) % 65536
 endfun
+
+" jirawl
+:autocmd BufRead *Projects/worksheets/can* set filetype=jirawl ai
