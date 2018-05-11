@@ -22,3 +22,9 @@
 [submodule "vim/plugins/ale"]
 	path = vim/plugins/ale
 	url = https://github.com/w0rp/ale.git
+[submodule "vim/plugins/typescript-vim"]
+	path = vim/plugins/typescript-vim
+	url = https://github.com/leafgarland/typescript-vim.git
+[submodule "vim/plugins/vim-jinja"]
+	path = vim/plugins/vim-jinja
+	url = https://github.com/lepture/vim-jinja.git
