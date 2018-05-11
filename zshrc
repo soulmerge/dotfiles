@@ -76,7 +76,7 @@ export EDITOR=vim
 export MANPAGER="/usr/bin/less -isr"
 export LANG=en_US.utf8
 export TZ="Europe/Vienna"
-export LESS="--ignore-case --chop-long-lines --raw-control-chars"
+export LESS="--ignore-case --chop-long-lines --RAW-CONTROL-CHARS"
 export TIMEFMT=$'real\t%E\nuser\t%U\nsys\t%S'
 export PAGER="less"
 
