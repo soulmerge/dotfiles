@@ -238,3 +238,6 @@ precmd() {
         echo "$_PREVCMD_START $_PREVCMD_CWD# $_PREVCMD_COMMAND -> $RESULT in ${ts_diff}s" >> ~/.shell-history/$_PREVCMD_START_DATE.log
     fi
 }
+
+# Initialize miniconde
+source ~/.miniconda3/etc/profile.d/conda.sh
