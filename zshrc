@@ -138,7 +138,7 @@ IsRemoteLogin() {
 	return 1
 }
 
-USER_COLOR=${blue}
+USER_COLOR=${green}
 HOST_COLOR=${white}
 LAST_CHAR="$"
 
