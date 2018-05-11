@@ -68,6 +68,25 @@ let g:syntastic_mode_map = {
     \ "active_filetypes": ["javascript", "php"],
     \ "passive_filetypes": [] }
 
+" plugin: ale
+let g:ale_linters = {
+\   'typescript': ['eslint', 'tslint', 'tsserver'],
+\}
+let g:ale_pattern_options = {
+\   '.*\.py$': {'ale_enabled': 0},
+\}
+"   'python': ['autopep8', 'flake8', isort, mypy, prospector, pycodestyle, pyls, pylint !!, yapf],
+let g:ale_sign_column_always = 1
+let g:ale_set_highlights = 0
+let g:ale_lint_delay = 250
+
+let g:ale_python_flake8_executable = 'python3'
+let g:ale_python_pylint_executable = 'pylint'
+
+nnoremap <leader>aa :ALELint<cr>
+nnoremap <leader>ar :ALEStopAllLSPs<cr>:ALELint<cr>
+nnoremap <leader>ad :ALEDetail<cr>
+
 " do not highlight matching parentheses (too slow)
 " let loaded_matchparen = 1
 

@@ -22,3 +22,6 @@
 [submodule "vim/plugins/vim-gnupg"]
 	path = vim/plugins/vim-gnupg
 	url = https://github.com/jamessan/vim-gnupg
+[submodule "vim/plugins/ale"]
+	path = vim/plugins/ale
+	url = https://github.com/w0rp/ale.git
