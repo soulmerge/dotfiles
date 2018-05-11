@@ -183,7 +183,13 @@ map <silent> <F5>    :e<CR>zz
 
 " Configure built-in Explorer
 set wildmenu
-set wildignore=*.bak,*.o,*.e,*~
+set wildignore=*.bak,*.o,*.e,*~,*/node_modules/*,*/hg/*,*/.git/*
+set path+=**
+
+" Do not search in included files and tags
+" (manages to recurse into /usr/include somehow)
+set complete-=i
+set complete-=t
 
 " Navigation when started with multiple files
 map <silent> <F2>  :prev<CR>
