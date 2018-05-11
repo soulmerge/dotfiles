@@ -284,3 +284,16 @@ endfun
 
 " jirawl
 :autocmd BufRead *Projects/worksheets/can* set filetype=jirawl ai
+
+function! InitTurkish()
+    " turkish
+    imap <leader>tc ç
+    imap <leader>tC Ç
+    imap <leader>tg ğ
+    imap <leader>tG Ğ
+    imap <leader>ti ı
+    imap <leader>tI İ
+    imap <leader>ts ş
+    imap <leader>tS Ş
+endfun
+map <leader>tt :call InitTurkish()<cr>
