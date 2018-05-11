@@ -40,7 +40,17 @@
                     "args": []
                 }
             ]
+        },
+        {
+            "before": [" ", "q"],
+            "after": [],
+            "commands": [
+                {
+                    "command": "workbench.action.closeActiveEditor",
+                    "args": []
+                }
+            ]
+
         }
     ],
-    "workbench.statusBar.visible": true
 }
