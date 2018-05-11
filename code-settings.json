@@ -1,0 +1,46 @@
+{
+    "window.zoomLevel": 1,
+    "editor.fontSize": 16,
+    "editor.autoClosingBrackets": false,
+    "code-runner.clearPreviousOutput": true,
+    "code-runner.executorMap": { 
+        "python": "python3" 
+    },
+    "python.linting.pylintPath": "/usr/bin/pylint3",
+    "python.linting.mypyEnabled": true,
+    "python.linting.mypyPath": "/usr/bin/mypy",
+    "python.disableInstallationCheck": true,
+    "python.jediPath": "/usr/lib/python3/dist-packages/",
+    "vim.useCtrlKeys": true,
+    "vim.insertModeKeyBindings": [
+        {
+            "before": ["-", "-"],
+            "after": ["<Esc>"]
+
+        }
+    ],
+    "vim.hlsearch": true,
+    "vim.otherModesKeyBindingsNonRecursive": [
+        {
+            "before": ["<C-n>"],
+            "after": [],
+            "commands": [
+                {
+                    "command": ":nohl",
+                    "args": []
+                }
+            ]
+        },
+        {
+            "before": ["-"],
+            "after": [],
+            "commands": [
+                {
+                    "command": "workbench.action.files.save",
+                    "args": []
+                }
+            ]
+        }
+    ],
+    "workbench.statusBar.visible": true
+}
