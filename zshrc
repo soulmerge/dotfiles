@@ -62,6 +62,7 @@ alias offlineimap="LD_PRELOAD= offlineimap"
 alias firefox="LD_PRELOAD= firefox"
 alias thunderbird="LD_PRELOAD= thunderbird"
 alias wine="LD_PRELOAD= wine"
+alias winetricks="LD_PRELOAD= winetricks"
 alias skype="LD_PRELOAD= skype"
 
 # switching away from ack
