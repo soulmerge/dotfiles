@@ -69,7 +69,7 @@ alias skype="LD_PRELOAD= skype"
 alias ack="echo 'Use ag!' >&2; sleep 1; ag"
 
 # environment variables
-PATH=~/bin/:$PATH:/usr/local/wheelbin:/usr/games/bin/:/usr/sbin:/sbin:
+PATH=~/bin/:$PATH:/usr/local/wheelbin:/usr/games/bin/:/usr/sbin:/sbin:~/.npm-global/bin:
 export PATH
 export INPUTRC=$HOME/.inputrc
 export EDITOR=vim
