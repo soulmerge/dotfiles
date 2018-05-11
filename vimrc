@@ -297,3 +297,5 @@ function! InitTurkish()
     imap <leader>tS Ş
 endfun
 map <leader>tt :call InitTurkish()<cr>
+
+set guifont=Monospace\ 12
