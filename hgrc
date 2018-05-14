@@ -28,6 +28,9 @@ vimdiff.args = -d $base $local $output $other +close +close
 strg.prefix = hg.strg.at
 strg.username = can
 strg.schemes = https 
+home.prefix = atesman.at
+home.username = soulmerge
+home.schemes = https
 
 [extdiff]
 cmd.vimdiff =
