@@ -11,6 +11,7 @@
     "python.linting.mypyPath": "/usr/bin/mypy",
     "python.disableInstallationCheck": true,
     "python.jediPath": "/usr/lib/python3/dist-packages/",
+    "vim.leader": "<space>",
     "vim.useCtrlKeys": true,
     "vim.insertModeKeyBindings": [
         {
@@ -42,7 +43,7 @@
             ]
         },
         {
-            "before": [" ", "q"],
+            "before": ["<leader>", "q"],
             "after": [],
             "commands": [
                 {

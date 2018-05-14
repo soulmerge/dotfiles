@@ -1,19 +1,6 @@
-// Place your key bindings in this file to overwrite the defaults
 [
     {
         "key": "ctrl+enter",
         "command": "code-runner.run"
-    },
-    {
-        "key": "ctrl+alt+n",
-        "command": "-code-runner.run"
-    },
-    {
-        "key": "space q",
-        "command": "workbench.action.closeActiveEditor"
-    },
-    {
-        "key": "ctrl+w",
-        "command": "-workbench.action.closeActiveEditor"
-    },
+    }
 ]
