@@ -51,11 +51,11 @@ test -f /usr/share/virtualenvwrapper/virtualenvwrapper.sh && source /usr/share/v
 if test -f /usr/local/lib/libstderred.so; then
     alias stderredon='export LD_PRELOAD="$LD_PRELOAD /usr/local/lib/libstderred.so"'
     alias stderredoff='export LD_PRELOAD="$(echo ${LD_PRELOAD/\/usr\/local\/lib\/libstderred.so/}|sed s/\^\ //)"'
+    stderredon
 else
     alias stderredon="echo stderred not found"
     alias stderredoff="echo stderred not found"
 fi
-stderredon
 
 # some apps won't will issue warnings with LD_PRELOAD
 alias offlineimap="LD_PRELOAD= offlineimap"
