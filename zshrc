@@ -246,4 +246,4 @@ precmd() {
 }
 
 # Initialize miniconde
-source ~/.miniconda3/etc/profile.d/conda.sh
+source ~/.miniconda/etc/profile.d/conda.sh
