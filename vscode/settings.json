@@ -1,7 +1,7 @@
 {
-    "window.zoomLevel": 1,
     "editor.fontSize": 16,
     "editor.autoClosingBrackets": false,
+    "editor.minimap.enabled": false,
     "code-runner.clearPreviousOutput": true,
     "code-runner.executorMap": { 
         "python": "python3" 
@@ -9,6 +9,8 @@
     "python.linting.pylintPath": "/usr/bin/pylint3",
     "python.linting.mypyEnabled": true,
     "python.linting.mypyPath": "/usr/bin/mypy",
+    "python.linting.flake8Enabled": true,
+    "python.linting.flake8Path": "/usr/bin/flake8",
     "python.disableInstallationCheck": true,
     "python.jediPath": "/usr/lib/python3/dist-packages/",
     "vim.leader": "<space>",
@@ -21,7 +23,7 @@
         }
     ],
     "vim.hlsearch": true,
-    "vim.otherModesKeyBindingsNonRecursive": [
+    "vim.normalModeKeyBindingsNonRecursive": [
         {
             "before": ["<C-n>"],
             "after": [],
@@ -54,4 +56,6 @@
 
         }
     ],
+    "explorer.confirmDragAndDrop": false,
+    "explorer.confirmDelete": false,
 }
