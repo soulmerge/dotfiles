@@ -58,4 +58,12 @@
     ],
     "explorer.confirmDragAndDrop": false,
     "explorer.confirmDelete": false,
+    "breadcrumbs.enabled": true,
+    "javascript.preferences.importModuleSpecifier": "relative",
+    "javascript.preferences.quoteStyle": "single",
+    "javascript.autoClosingTags": false,
+    "typescript.preferences.importModuleSpecifier": "relative",
+    "typescript.preferences.quoteStyle": "single",
+    "window.menuBarVisibility": "toggle",
+    "python.jediEnabled": false,
 }
