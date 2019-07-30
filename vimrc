@@ -48,15 +48,13 @@ map <silent> <t_S8>  <S-F8>
 let g:pymode_python = 'python3'
 let g:pymode_folding = 0
 let g:pymode_doc = 1
-let g:pymode_lint_ignore = "E711,E712"
-" let g:pymode_lint_ignore = "E711,E301"
 let g:pymode_lint_cwindow = 0
 let g:pymode_lint_checkers = ['pyflakes', 'pep8', 'mccabe']
 let g:pymode_rope = 0
 let g:pymode_rope_lookup_project = 0
 let g:pymode_rope_completion = 0
 let g:pymode_rope_organize_imports_bind = '<leader>I'
-" let g:pymode_rope_autoimport_bind = '<leader>i'
+let g:pymode_rope_autoimport_bind = '<leader>i'
 
 " plugin: syntastic
 let g:syntastic_cpp_compiler_options = '-std=c++11'
