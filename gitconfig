@@ -3,6 +3,7 @@
     name = Necdet Can Ateşman
 
 [alias]
+    b = branch
     co = checkout
     ci = commit
     st = status
