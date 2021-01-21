@@ -160,19 +160,33 @@ fi
 function battery {
     test ! -d /sys/class/power_supply/BAT0 && return
     PERC=$(( $(cat /sys/class/power_supply/BAT0/charge_now) * 100 / $(cat /sys/class/power_supply/BAT0/charge_full) ))
-    COLOR=$black
+    COLOR=$BLUE
     test $PERC -lt 9 && COLOR=$yellow
     test $PERC -lt 6 && COLOR=$magenta
     test $PERC -lt 3 && COLOR=$RED
     DIRECTION=↑
     test "$(cat /sys/class/power_supply/BAT0/status)" = Discharging && DIRECTION=↓
-    echo "${COLOR}${PERC}%%${DIRECTION}${NC}"
+    test $PERC -gt 98 && return
+    echo " ${COLOR}${PERC}%%${DIRECTION}${NC}"
+}
+
+function prompt_date {
+    echo "${blue}$(date '+%T')${NC}"
 }
 
 # prompt
 setopt PROMPT_SUBST
 PROMPT="$USER_COLOR%n$HOST_COLOR@%m$NC:%~$LAST_CHAR "
-RPROMPT='$(battery)'
+RPROMPT='$(prompt_date)$(battery)'
+
+# re-render prompt on enter
+# https://stackoverflow.com/a/33328293/44562
+reset-prompt-and-accept-line() {
+    zle reset-prompt
+    zle accept-line
+}
+zle -N reset-prompt-and-accept-line
+bindkey '^m' reset-prompt-and-accept-line
 
 # convenience function for cloning score projects
 CloneScore() {
