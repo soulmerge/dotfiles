@@ -243,7 +243,24 @@ precmd() {
     fi
 }
 
-# Initialize miniconde
+_git_delete_obsolete_branches() {
+    git fetch --prune
+
+    BRANCHES=$(git branch -r | awk '{print $1}' | egrep -v -f /dev/fd/0 <(git branch -vv | grep origin) | awk '{print $1}')
+
+    echo Branches that are gone on origin:
+    echo $BRANCHES | tr " " "\n"
+
+    echo -n "Delete these branches (y/n)? "
+    read -k answer
+    echo
+
+    if [ "$answer" != "y" ]; then echo aborting && return; fi
+
+    echo $BRANCHES | xargs -n 1 git branch -D
+}
+
+# Initialize miniconda
 source ~/.miniconda/etc/profile.d/conda.sh
 
 # auto-activate flinkshop environment
