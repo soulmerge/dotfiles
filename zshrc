@@ -220,6 +220,9 @@ compinit
 export NVM_DIR="/home/soulmerge/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
+# Use ipdb for python breakpoints
+export PYTHONBREAKPOINT=ipdb.set_trace
+
 # browserstack authentication
 [ -f ~/.browserstackrc ] && source ~/.browserstackrc
 
