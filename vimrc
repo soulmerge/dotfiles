@@ -40,6 +40,14 @@ let g:LargeFile = 100 " in megabytes
 " plugin: NerdTree
 let NERDTreeQuitOnOpen=1
 let NERDTreeMapOpenSplit="#"
+" NERDTree setting defaults to work around http://github.com/scrooloose/nerdtree/issues/489
+let g:NERDTreeDirArrows = 1
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
+let g:NERDTreeGlyphReadOnly = "RO"
+" https://github.com/preservim/nerdtree/issues/911
+let g:NERDTreeNodeDelimiter = "	"
+
 map <silent> <S-F8>  :NERDTreeFocus<CR>
 map <silent> <F8>    :NERDTreeFind<CR>
 map <silent> <t_S8>  <S-F8>
