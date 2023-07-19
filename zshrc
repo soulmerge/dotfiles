@@ -285,3 +285,5 @@ source ~/.miniconda/etc/profile.d/conda.sh
 conda env list | grep -qE '^flinkshop\s+' && conda activate flinkshop
 
 export PYTHONBREAKPOINT=ipdb.set_trace
+
+alias vim=nvim
