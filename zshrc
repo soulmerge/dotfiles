@@ -212,13 +212,14 @@ zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character t
 zstyle ':completion:*' list-suffixes true
 zstyle ':completion:*' menu select=3
 zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
-zstyle :compinstall filename '/home/soulmerge/.zshrc'
+zstyle :compinstall filename '$HOME/.zshrc'
 
 autoload -Uz compinit
 compinit
 
-export NVM_DIR="/home/soulmerge/.nvm"
+export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Use ipdb for python breakpoints
 export PYTHONBREAKPOINT=ipdb.set_trace
@@ -231,7 +232,7 @@ export PYTHONBREAKPOINT=ipdb.set_trace
 
     # The following line makes sure that you can access the `score'
     # application in your shell:
-    PATH=$PATH:/home/soulmerge/.local/bin
+    PATH=$PATH:$HOME/.local/bin
 
 # The next block was inserted by the `projects' module of
 # The SCORE Framework (http://score-framework.org)
