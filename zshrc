@@ -281,8 +281,8 @@ _git_delete_obsolete_branches() {
 # Initialize miniconda
 source ~/.miniconda/etc/profile.d/conda.sh
 
-# auto-activate flinkshop environment
-conda env list | grep -qE '^flinkshop\s+' && conda activate flinkshop
+# auto-activate allezam environment
+conda env list | grep -qE '^allezam\s+' && conda activate allezam
 
 export PYTHONBREAKPOINT=ipdb.set_trace
 
