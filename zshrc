@@ -283,3 +283,5 @@ source ~/.miniconda/etc/profile.d/conda.sh
 
 # auto-activate flinkshop environment
 conda env list | grep -qE '^flinkshop\s+' && conda activate flinkshop
+
+export PYTHONBREAKPOINT=ipdb.set_trace
