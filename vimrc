@@ -201,10 +201,6 @@ set complete-=t
 map <silent> <F2>  :prev<CR>
 map <silent> <F3>  :next<CR>
 
-" Do not clutter remote file systems with swap files
-set dir=~/.vim/swp/
-set viminfo='10,<100,:1000,/1000,@1000,%,n~/.vim/viminfo
-
 " avoid hitting ESC
 imap jj <ESC>
 map j :up<CR>
