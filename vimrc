@@ -12,7 +12,7 @@ set cindent
 source ~/.vim/plugins/pathogen/autoload/pathogen.vim
 
 " load plugins through pathogen
-call pathogen#infect('plugins/{}')
+call pathogen#infect('~/.vim/plugins/{}')
 
 " microsoft products never adhere to any standards
 set t_SL=[d
